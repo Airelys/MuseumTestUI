@@ -1,7 +1,7 @@
 <div *ngIf="createForm">
   <h1><b>Create</b></h1>
 
-  <form [formGroup]="form" class="container box">
+  <form [formGroup]="form" class="container box" #createForm = "ngForm">
     <h3 class="top"><b>Title</b></h3>
     <input type="text" formControlName="title"/><br>
 
@@ -19,7 +19,7 @@
     </mat-form-field><br>
   </form>
 
-  <button mat-flat-button (click)="create()">
+  <button mat-flat-button (click)="create()" [disabled]="!createForm.form.valid">
     <div class="pattern">
       <div class="target inner"></div>
     </div>
@@ -37,7 +37,7 @@
 <div *ngIf="updateForm">
   <h1><b>Update</b></h1>
 
-  <form [formGroup]="formUp" class="container box">
+  <form [formGroup]="formUp" class="container box" #updateForm = "ngForm">
     <h3 class="top"><b>Title</b></h3>
     <input type="text" formControlName="titleUp"/><br>
 
@@ -55,7 +55,7 @@
     </mat-form-field><br>
   </form>
 
-  <button mat-flat-button (click)="update()">
+  <button mat-flat-button (click)="update()" [disabled]="!updateForm.form.valid">
     <div class="pattern">
       <div class="target inner"></div>
     </div>
