@@ -1,0 +1,99 @@
+
+button{
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  border-radius: 100px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(173, 163, 163, 0.16), 0 3px 6px rgba(119, 115, 115, 0.23);
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 20px;
+  outline: none;
+  overflow: hidden;
+  padding: 1em 2em;
+  position: relative;
+  width: 250px;
+  display: inline-flex;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+button:enabled{
+color: white;
+}
+button:hover{
+opacity: 0.8;
+box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.pattern {
+background: rgb(55, 55, 216);
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+}
+.inner {
+height: 100px;
+width: 400px;
+}
+.text {
+position: relative;
+left:25%;
+opacity: 0.9;
+text-align: center;
+}
+
+
+.center{
+  font-size: 50px;
+  margin:0px auto;
+  color:rgb(250, 246, 246);
+  margin-top: 100px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: jump;
+          animation-name: jump;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.presentation{
+  background-image: url(../../../assets/img/Galería_Museo_del_Carmen3.jpg);
+  max-width: 100%;
+  height: 764px;
+  text-align: center;
+  margin-top: -2.65cm;
+}
+
+
+
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}

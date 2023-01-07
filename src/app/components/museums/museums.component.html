@@ -1,0 +1,48 @@
+<div [hidden]="museumForm || updateForm" class="container box">
+  <div class="name">
+    <h1><b>Museums</b></h1>
+  </div>
+
+  <div class="type">
+    <h4><b>Select type</b></h4>
+    <mat-form-field class="form_element">
+      <mat-select value="All" (selectionChange)="typeAllMuseum(typeMuseum.value)" #typeMuseum>
+          <mat-option *ngFor="let m of type" [value]="m.name" >{{m.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="table_responsive">
+    <table class="table-all hoverable">
+      <tbody>
+        <tr class="indigo">
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Type</th>
+          <th>Articles</th>
+          <th><a (click)="Create()"><mat-icon>add_circle_outline</mat-icon></a></th>
+        </tr>
+      </tbody>
+      <tbody >
+        <tr *ngFor="let item of dataObs$ | async">
+          <td>{{item["name"]}}</td>
+          <td>{{item["address"]}}</td>
+          <td>{{item["city"]}}</td>
+          <td>{{item["type"]}}</td>
+          <td><button (click)="viewArticles(item)">View</button></td>
+          <td><a><mat-icon (click)="Update(item)">edit</mat-icon></a><a><mat-icon (click)="Delete(item)">delete</mat-icon></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <mat-paginator class="bottom"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]"
+  [pageSize]="5"></mat-paginator>
+
+</div>
+
+
+
+<app-museum *ngIf="museumForm||updateForm"></app-museum>

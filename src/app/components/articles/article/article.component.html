@@ -1,0 +1,71 @@
+<div *ngIf="createForm">
+  <h1><b>Create</b></h1>
+
+  <form [formGroup]="form" class="container box">
+    <h3 class="top"><b>Title</b></h3>
+    <input type="text" formControlName="title"/><br>
+
+    <h3><b>Description</b></h3>
+    <input type="text" formControlName="description"/><br>
+
+    <h3><b>Is Damaged</b></h3>
+    <mat-checkbox color="primary" formControlName="isDamaged" class="check"></mat-checkbox>
+
+    <h3><b>Museum</b></h3>
+    <mat-form-field class="form_element">
+        <mat-select>
+            <mat-option *ngFor="let m of museums" [value]="m.name" (click)="museumId=m.id">{{m.name}}</mat-option>
+        </mat-select>
+    </mat-form-field><br>
+  </form>
+
+  <button mat-flat-button (click)="create()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Accept</div>
+  </button>
+
+  <button mat-flat-button (click)="cancel()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Cancel</div>
+  </button>
+</div>
+
+<div *ngIf="updateForm">
+  <h1><b>Update</b></h1>
+
+  <form [formGroup]="formUp" class="container box">
+    <h3 class="top"><b>Title</b></h3>
+    <input type="text" formControlName="titleUp"/><br>
+
+    <h3><b>Description</b></h3>
+    <input type="text" formControlName="descriptionUp"/><br>
+
+    <h3><b>Is Damaged</b></h3>
+    <mat-checkbox color="primary" formControlName="isDamagedUp" class="check"></mat-checkbox>
+
+    <h3><b>Relocate</b></h3>
+    <mat-form-field class="form_element">
+        <mat-select  formControlName="museumUp">
+            <mat-option *ngFor="let m of museums" [value]="m.name" (click)="museumId=m.id">{{m.name}}</mat-option>
+        </mat-select>
+    </mat-form-field><br>
+  </form>
+
+  <button mat-flat-button (click)="update()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Accept</div>
+  </button>
+
+  <button mat-flat-button (click)="cancel()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Cancel</div>
+  </button>
+</div>

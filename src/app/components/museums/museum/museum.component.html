@@ -1,0 +1,72 @@
+<div *ngIf="createForm">
+  <h1><b>Create</b></h1>
+
+  <form [formGroup]="form" class="container box">
+    <h3 class="top"><b>Name</b></h3>
+    <input type="text" formControlName="name"/><br>
+
+    <h3><b>Address</b></h3>
+    <input type="text" formControlName="address"/><br>
+
+    <h3><b>City</b></h3>
+    <input type="text" formControlName="city"/><br>
+
+    <h3><b>Type</b></h3>
+    <mat-form-field class="form_element">
+        <mat-select  formControlName="typeMuseum">
+            <mat-option *ngFor="let m of type" [value]="m.name" >{{m.name}}</mat-option>
+        </mat-select>
+    </mat-form-field><br>
+  </form>
+
+  <button mat-flat-button (click)="create()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Accept</div>
+  </button>
+
+  <button mat-flat-button (click)="cancel()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Cancel</div>
+  </button>
+</div>
+
+<div *ngIf="updateForm">
+  <h1><b>Update</b></h1>
+
+  <form [formGroup]="formUp" class="container box">
+    <h3 class="top"><b>Name</b></h3>
+    <input type="text" formControlName="nameUp"/><br>
+
+    <h3><b>Address</b></h3>
+    <input type="text" formControlName="addressUp"/><br>
+
+    <h3><b>City</b></h3>
+    <input type="text" formControlName="cityUp"/><br>
+
+    <h3><b>Type</b></h3>
+    <mat-form-field class="form_element">
+        <mat-select  formControlName="typeMuseumUp">
+            <mat-option *ngFor="let m of type" [value]="m.name" >{{m.name}}</mat-option>
+        </mat-select>
+    </mat-form-field><br>
+  </form>
+
+  <button mat-flat-button (click)="update()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Accept</div>
+  </button>
+
+  <button mat-flat-button (click)="cancel()">
+    <div class="pattern">
+      <div class="target inner"></div>
+    </div>
+    <div class="text">Cancel</div>
+  </button>
+</div>
+

@@ -1,0 +1,75 @@
+.box{
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+.container {
+  padding: 0.01em 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+h1,h4{
+  color: blue;
+}
+.name{
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.bottom{
+  margin-bottom: 5%;
+}
+
+.type{
+  margin-left: 80%;
+}
+
+a:hover{
+  color: cornflowerblue;
+}
+
+.indigo {
+  color: #fff !important;
+  background-color: rgb(55, 55, 216) !important;
+}
+
+.table-all{
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	display: table;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.table-all {
+	border: 1px solid #ccc
+}
+
+.table-all tr {
+	border-bottom: 1px solid #ddd
+}
+
+.table-all tr:nth-child(even) {
+	background-color: #f1f1f1
+}
+
+.hoverable tr:hover {
+	background-color: #ccc
+}
+
+.table-all td, .table-all th{
+	padding: 8px 8px;
+	display: table-cell;
+	text-align: left;
+	vertical-align: top
+}
+
+.table-all th:first-child, .table-all td:first-child {
+	padding-left: 16px
+}
+
+.table_responsive{
+  overflow-x: auto;
+}
